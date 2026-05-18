@@ -15,8 +15,9 @@ Generate VCA Vectors
       ↓
 Downstream Analysis
 ```
+## Extract Video + Audio Embeddings
 
-## Setup
+### Setup
 
 Clone Video-LLaMA and create output directories:
 
@@ -28,7 +29,7 @@ mkdir -p embs
 mkdir -p videodesc
 ```
 
-## Install Conda
+### Install Conda
 
 ```bash
 MINICONDA3=Miniconda3-py37_4.9.2-Linux-x86_64.sh
@@ -40,7 +41,7 @@ chmod +x ~/Downloads/$MINICONDA3
 source ~/miniconda3/bin/activate base
 ```
 
-## Install Dependencies
+### Install Dependencies
 
 ```bash
 sudo apt update
@@ -70,13 +71,13 @@ pip install --no-cache-dir torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 \
   --index-url https://download.pytorch.org/whl/cu118
 ```
 
-## Download Video-LLaMA Checkpoints
+### Download Video-LLaMA Checkpoints
 
 ```bash
 git clone https://huggingface.co/DAMO-NLP-SG/Video-LLaMA-2-7B-Finetuned
 ```
 
-## Required Code Fixes
+### Required Code Fixes
 
 Depending on your environment, you may need to patch `pytorchvideo`:
 
@@ -93,7 +94,7 @@ eval_configs/video_llama_eval_withaudio.yaml
 video_llama/conversation/conversation_video.py
 ```
 
-## TikTok Videos
+<!-- ## TikTok Videos
 
 TikTok videos can be downloaded using the following URL format:
 
@@ -107,9 +108,9 @@ Example:
 
 ```text
 https://www.tiktok.com/share/video/7313716511095442693
-```
+``` -->
 
-## Extract Video and Audio Embeddings
+### Extract Video and Audio Embeddings
 
 We use **[Video-LLaMA](https://github.com/DAMO-NLP-SG/Video-LLaMA)** to extract multimodal video and audio embeddings from TikTok videos.
 
@@ -139,11 +140,22 @@ The generated embeddings are saved under:
 embs/
 ```
 
-Video descriptions or intermediate outputs can be saved under:
+Video-LLaMA's response to "What is happening in the video?" is saved under:
 
 ```text
 videodesc/
 ```
+
+### Embedding Dimensions
+
+For each TikTok video, the pipeline extracts both video and audio embeddings.
+
+```text
+Video embedding shape: torch.Size([1, 32, 4096])
+Audio embedding shape: torch.Size([1, 8, 4096])
+```
+
+## Generate VCA Vectors
 
 ## Citation
 
