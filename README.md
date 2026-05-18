@@ -15,9 +15,10 @@ Generate VCA Vectors
       ↓
 Downstream Analysis
 ```
-## Extract Video + Audio Embeddings
 
-We use **[Video-LLaMA](https://github.com/DAMO-NLP-SG/Video-LLaMA)** to extract multimodal video and audio embeddings from TikTok videos.
+This pipeline uses **[Video-LLaMA](https://github.com/DAMO-NLP-SG/Video-LLaMA)** to extract multimodal video and audio embeddings from TikTok videos.
+
+## Extract Video + Audio Embeddings
 
 ### Setup
 
@@ -29,6 +30,7 @@ cd Video-LLaMA
 
 mkdir -p embs
 mkdir -p videodesc
+mkdir -p vcavectors
 ```
 
 ### Install Conda
@@ -126,9 +128,9 @@ Example:
 https://www.tiktok.com/share/video/7313716511095442693
 ``` -->
 
-### Extract Video and Audio Embeddings
+### Run Embedding Extraction
 
-Run the embedding extraction script with:
+Run the embedding extraction script with a TikTok video ID:
 
 ```bash
 python video2embeddings.py \
@@ -137,7 +139,7 @@ python video2embeddings.py \
   --gpu-id 0 \
   --videoname {video_id}
 ```
-Replace `{video_id}` with a 19 Digit TikTok Video ID.
+Replace `{video_id}` with a 19-digit TikTok video ID.
 
 Example:
 
