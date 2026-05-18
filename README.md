@@ -79,7 +79,7 @@ pip install --no-cache-dir torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 \
 git clone https://huggingface.co/DAMO-NLP-SG/Video-LLaMA-2-7B-Finetuned
 ```
 
-### Required Code Fixes
+### Required Code Changes
 
 Depending on your environment, you may need to patch `pytorchvideo`:
 
@@ -89,10 +89,13 @@ vim /home/maleeha2/miniconda3/envs/videollama/lib/python3.9/site-packages/pytorc
 
 Remove `_tensor` from the imports.
 
-Then update the following files for your local paths and configuration:
+Then update the following files in Video-LLaMA's repository from the ones in this repository:
 
 ```text
 eval_configs/video_llama_eval_withaudio.yaml
+```
+
+```text
 video_llama/conversation/conversation_video.py
 ```
 
