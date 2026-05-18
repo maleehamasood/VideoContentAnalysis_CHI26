@@ -183,6 +183,15 @@ The output is saved as:
 vcavectors/vca_{video_id}.npy
 ```
 
+The generated **Video Content Analysis (VCA)** vectors can be used for:
+
+- Content clustering
+- Feed diversity analysis
+- Temporal behavior analysis
+- Similarity search
+- User-interest modeling
+- Recommendation system analysis
+
 ## Citation
 
 If you use this repository or build upon this pipeline, please cite:
