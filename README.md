@@ -17,6 +17,8 @@ Downstream Analysis
 ```
 ## Extract Video + Audio Embeddings
 
+We use **[Video-LLaMA](https://github.com/DAMO-NLP-SG/Video-LLaMA)** to extract multimodal video and audio embeddings from TikTok videos.
+
 ### Setup
 
 Clone Video-LLaMA and create output directories:
@@ -111,8 +113,6 @@ https://www.tiktok.com/share/video/7313716511095442693
 ``` -->
 
 ### Extract Video and Audio Embeddings
-
-We use **[Video-LLaMA](https://github.com/DAMO-NLP-SG/Video-LLaMA)** to extract multimodal video and audio embeddings from TikTok videos.
 
 Run the embedding extraction script with:
 
