@@ -172,15 +172,27 @@ Audio embedding shape: torch.Size([1, 8, 4096])
 
 ## Generate VCA Vectors
 
+After generating the audio and video embeddings, concatenate them into a single VCA vector:
+
+```bash
+python make_vca_vector.py --videoname {video_id}
+```
+The output is saved as:
+
+```text
+vcavectors/vca_{video_id}.npy
+```
+
 ## Citation
 
 If you use this repository or build upon this pipeline, please cite:
 
 ```bibtex
-@inproceedings{masood2026counting,
-  title={Counting How the Seconds Count: Understanding Algorithm--User Interplay in TikTok via ML-driven Analysis of Video Content},
-  author={Masood, Maleeha and others},
-  booktitle={Proceedings of the CHI Conference on Human Factors in Computing Systems},
-  year={2026}
+@inproceedings{10.1145/3772318.3790311,
+author = {Masood, Maleeha and Kannan, Shreya and Liu, Zikun and Vasisht, Deepak and Gupta, Indranil},
+title = {Counting How the Seconds Count: Understanding TikTok Behavior via ML-driven Analysis of Video Content},
+url = {https://doi.org/10.1145/3772318.3790311},
+booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+series = {CHI '26}
 }
 ```
