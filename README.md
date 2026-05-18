@@ -38,12 +38,6 @@ https://www.tiktok.com/share/video/{video_id}
 
 Replace `{video_id}` with a valid 19 digit TikTok video ID.
 
-Example:
-
-```text
-https://www.tiktok.com/share/video/1234567890123456789
-```
-
 ---
 
 ## Extract Video and Audio Embeddings
