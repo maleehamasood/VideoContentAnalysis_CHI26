@@ -41,7 +41,7 @@ TikTok videos can be downloaded using the following URL format:
 https://www.tiktok.com/share/video/{video_id}
 ```
 
-Replace `{video_id}` with the TikTok video ID.
+Replace `{video_id}` with a valid 19 digit TikTok video ID.
 
 Example:
 
@@ -67,16 +67,8 @@ If you use this repository or build upon this pipeline, please cite:
 @inproceedings{10.1145/3772318.3790311,
 author = {Masood, Maleeha and Kannan, Shreya and Liu, Zikun and Vasisht, Deepak and Gupta, Indranil},
 title = {Counting How the Seconds Count: Understanding TikTok Behavior via ML-driven Analysis of Video Content},
-year = {2026},
-isbn = {9798400722783},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
 url = {https://doi.org/10.1145/3772318.3790311},
-doi = {10.1145/3772318.3790311},
 booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
-articleno = {1396},
-numpages = {22},
-keywords = {TikTok; Algorithmic Experience; Recommender Systems; Short‑Form Video; Data Donation; Multimodal Video Analysis},
 series = {CHI '26}
 }
 ```
