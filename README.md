@@ -126,10 +126,11 @@ python video2embeddings.py \
   --cfg-path eval_configs/video_llama_eval_withaudio.yaml \
   --model_type llama_v2 \
   --gpu-id 0 \
-  --videoname 7313716511095442693
+  --videoname {video_id}
 ```
+Replace `{video_id}` with a 19 digit TikTok video ID.
 
-Another example:
+Example:
 
 ```bash
 python video2embeddings.py \
