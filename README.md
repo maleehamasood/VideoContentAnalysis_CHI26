@@ -89,16 +89,25 @@ vim /home/maleeha2/miniconda3/envs/videollama/lib/python3.9/site-packages/pytorc
 
 Remove `_tensor` from the imports.
 
-### Replace Files
+### Replace Required Files
 
-Replace the following files in Video-LLaMA's repository from the ones in this repository:
+After cloning Video-LLaMA, replace the following files in the Video-LLaMA repository with the versions provided in this repository:
 
 ```text
 eval_configs/video_llama_eval_withaudio.yaml
+video_llama/conversation/conversation_video.py
 ```
 
+Then copy the embedding extraction script into the root of the Video-LLaMA repository:
+
+```bash
+cp video2embeddings.py /path/to/Video-LLaMA/
+```
+
+After this step, `video2embeddings.py` should be located at:
+
 ```text
-video_llama/conversation/conversation_video.py
+Video-LLaMA/video2embeddings.py
 ```
 
 <!-- ## TikTok Videos
@@ -128,7 +137,7 @@ python video2embeddings.py \
   --gpu-id 0 \
   --videoname {video_id}
 ```
-Replace `{video_id}` with a 19 digit TikTok video ID.
+Replace `{video_id}` with a 19 Digit TikTok Video ID.
 
 Example:
 

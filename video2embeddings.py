@@ -1,6 +1,11 @@
 """
 Adapted from: https://github.com/Vision-CAIR/MiniGPT-4/blob/main/demo.py
 """
+
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="torchvision.transforms._functional_video")
+warnings.filterwarnings("ignore", category=UserWarning, module="torchvision.transforms._transforms_video")
+
 import argparse
 import os
 import random
@@ -35,7 +40,7 @@ def parse_args():
         "in xxx=yyy format will be merged into config file (deprecate), "
         "change to --cfg-options instead.",
     )
-    parser.add_argument("--videoname", type=str, default='vicuna', help="Name of video")
+    parser.add_argument("--videoname", type=str, default='7313716511095442693', help="19 Digit TikTok Video ID")
     args = parser.parse_args()
     return args
 
@@ -69,8 +74,9 @@ if "audio_" + args.videoname + ".pth" not in os.listdir("embs"):
         video = gr.Video()
         chat_state = gr.State()
         img_list = gr.State()
-        chat_state = conv_llava_llama_2.copy(); videoname = args.videoname; command = f'yt-dlp --extractor-args "tiktok:api_hostname=api16-normal-c-useast1a.tiktokv.com;app_info=7355728856979392262" "https://www.tiktok.com/@/video/{videoname}" -o "{videoname}.mp4"'
+        chat_state = conv_llava_llama_2.copy(); videoname = args.videoname; command = f'yt-dlp --no-warnings --extractor-args "tiktok:api_hostname=api16-normal-c-useast1a.tiktokv.com;app_info=7355728856979392262" "https://www.tiktok.com/@/video/{videoname}" -o "{videoname}.mp4"'
 
+        print(f"Downloading Video {args.videoname} Temporarily")
         os.system(command)
 
         video = args.videoname + ".mp4"
@@ -84,8 +90,8 @@ if "audio_" + args.videoname + ".pth" not in os.listdir("embs"):
 
         llm_message = chat.answer(conv=chat_state, img_list=img_list, max_new_tokens=300, max_length=20000)[0]
 
-        print(video, llm_message)
         with open("videodesc/" + args.videoname + '.txt', 'w') as file:
             file.write(llm_message)
 
         os.system("rm " + args.videoname + ".mp4")
+        print("Deleted Video")

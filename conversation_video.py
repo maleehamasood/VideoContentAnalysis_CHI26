@@ -283,7 +283,7 @@ class Chat:
        msg = ""
        if isinstance(video_path, str):  # is a video path
            ext = os.path.splitext(video_path)[-1].lower()
-           print(video_path)
+        #    print(video_path)
            # image = self.vis_processor(image).unsqueeze(0).to(self.device)
            video, msg = load_video(
                video_path=video_path,
@@ -310,9 +310,9 @@ class Chat:
                # image_emb, _ = self.model.encode_videoQformer_audiovideo(video,audio)
                image_emb, _ = self.model.encode_videoQformer_visual(video)
                audio_emb,_  = self.model.encode_audioQformer(audio)
-               print(image_emb.shape)
-               print(audio_emb.shape)
-               print(video_path)
+            #    print(image_emb.shape)
+            #    print(audio_emb.shape)
+            #    print(video_path)
                file_name = f'embs/video_{video_path.split("/")[-1][:-4]}.pth'
                torch.save(image_emb,file_name)
                file_name = f'embs/audio_{video_path.split("/")[-1][:-4]}.pth'
