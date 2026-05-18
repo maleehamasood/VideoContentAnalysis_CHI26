@@ -91,7 +91,7 @@ Remove `_tensor` from the imports.
 
 ### Replace Files
 
-Then replace the following files in Video-LLaMA's repository from the ones in this repository:
+Replace the following files in Video-LLaMA's repository from the ones in this repository:
 
 ```text
 eval_configs/video_llama_eval_withaudio.yaml
